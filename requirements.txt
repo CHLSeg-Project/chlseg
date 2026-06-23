@@ -1,0 +1,17 @@
+-r requirements/optional.txt
+-r requirements/runtime.txt
+-r requirements/tests.txt
+-r requirements/multimodal.txt
+-r mmcv>=2.0.0rc4,<2.2.0
+-r mmengine>=0.7.0,<1.0.0
+-r torch>=1.12.0
+-r torchvision>=0.13.0
+-r matplotlib
+-r numpy
+-r packaging
+-r prettytable
+-r scipy
+-r opencv-python>=4.5
+-r tqdm
+-r ninja
+-r einops

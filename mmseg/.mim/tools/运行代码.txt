@@ -1,0 +1,16 @@
+python tools/train.py C:\Users\20988\Desktop\CCASeg无修改\CCASeg-main\configs\segnext\segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512.py --work-dir work_dirs/baseline_mscan_t_ccaseg_10k_ade20k_compare_ref --launcher none
+python tools/train.py C:\Users\20988\Desktop\CCASeg无修改\CCASeg-main\configs\segnext\segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_waveseg.py --work-dir work_dirs/baseline_mscan_t_ccaseg_10k_ade20k_compare_ref --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawarefine.py --work-dir work_dirs/baseline_mscan_t_ccaseg_10k_ade20k_compare_ref --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_sos_refine.py --work-dir work_dirs/mscan_t_ccawave_sos_refine --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_sos_guard.py --work-dir work_dirs/mscan_t_ccawave_sos_guard --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_cop_lite.py --work-dir work_dirs/mscan_t_ccawave_cop_lite --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_relation_lite.py --work-dir work_dirs/mscan_t_ccawave_relation_lite --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_cop_bifpn_lite.py --work-dir work_dirs/mscan_t_ccawave_cop_bifpn_lite --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_cop_stable_gate.py --work-dir work_dirs/mscan_t_ccawave_cop_stable_gate --launcher none
+python tools/train.py configs/cclnet/mscan-t_1xb16-adamw-160k_ade20k-512x512_ccawave_cop_lite.py --work-dir work_dirs/mscan_t_ccawave_cop_lite --launcher none
+python tools/train.py configs/segnext/segnext_mscan-t_1xb16-adamw-160k_ade20k-512x512.py --work-dir work_dirs/segnext --launcher none
+python tools/train.py configs/segnext/1.py --work-dir work_dirs/segnext --launcher none
+python tools/train.py local_configs/ccaseg/tiny/ccaseg.tiny.512x512.ade.160k.py --work-dir work_dirs/CCASeg --launcher none
+python tools/train.py configs/cclnet/mscan-t_1xb16-adamw-160k_ade20k-512x512_chlseg.py --work-dir work_dirs/chlseg --launcher none
+python tools/train.py configs/cclnet/segman-s_1xb16-adamw-160k_ade20k-512x512_chlseg.py
+

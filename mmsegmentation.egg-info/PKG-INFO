@@ -1,0 +1,176 @@
+Metadata-Version: 2.4
+Name: mmsegmentation
+Version: 1.2.2
+Summary: Open MMLab Semantic Segmentation Toolbox and Benchmark
+Home-page: https://github.com/open-mmlab/mmsegmentation
+Author: MMSegmentation Contributors
+Author-email: openmmlab@gmail.com
+License: Apache License 2.0
+Keywords: computer vision,semantic segmentation
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: packaging
+Requires-Dist: prettytable
+Requires-Dist: scipy
+Provides-Extra: all
+Requires-Dist: cityscapesscripts; extra == "all"
+Requires-Dist: clip; extra == "all"
+Requires-Dist: diffusers; extra == "all"
+Requires-Dist: einops==0.3.0; extra == "all"
+Requires-Dist: imageio==2.9.0; extra == "all"
+Requires-Dist: imageio-ffmpeg==0.4.2; extra == "all"
+Requires-Dist: invisible-watermark; extra == "all"
+Requires-Dist: kornia==0.6; extra == "all"
+Requires-Dist: latent-diffusion; extra == "all"
+Requires-Dist: nibabel; extra == "all"
+Requires-Dist: omegaconf==2.1.1; extra == "all"
+Requires-Dist: pudb==2019.2; extra == "all"
+Requires-Dist: pytorch-lightning==1.4.2; extra == "all"
+Requires-Dist: streamlit>=0.73.1; extra == "all"
+Requires-Dist: taming-transformers; extra == "all"
+Requires-Dist: test-tube>=0.7.5; extra == "all"
+Requires-Dist: timm; extra == "all"
+Requires-Dist: torch-fidelity==0.3.0; extra == "all"
+Requires-Dist: torchmetrics==0.6.0; extra == "all"
+Requires-Dist: transformers==4.19.2; extra == "all"
+Requires-Dist: matplotlib; extra == "all"
+Requires-Dist: numpy; extra == "all"
+Requires-Dist: packaging; extra == "all"
+Requires-Dist: prettytable; extra == "all"
+Requires-Dist: scipy; extra == "all"
+Requires-Dist: codecov; extra == "all"
+Requires-Dist: flake8; extra == "all"
+Requires-Dist: ftfy; extra == "all"
+Requires-Dist: interrogate; extra == "all"
+Requires-Dist: pytest; extra == "all"
+Requires-Dist: regex; extra == "all"
+Requires-Dist: xdoctest>=0.10.0; extra == "all"
+Requires-Dist: yapf; extra == "all"
+Requires-Dist: ftfy; extra == "all"
+Requires-Dist: regex; extra == "all"
+Provides-Extra: tests
+Requires-Dist: codecov; extra == "tests"
+Requires-Dist: flake8; extra == "tests"
+Requires-Dist: ftfy; extra == "tests"
+Requires-Dist: interrogate; extra == "tests"
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: regex; extra == "tests"
+Requires-Dist: xdoctest>=0.10.0; extra == "tests"
+Requires-Dist: yapf; extra == "tests"
+Provides-Extra: optional
+Requires-Dist: cityscapesscripts; extra == "optional"
+Requires-Dist: clip; extra == "optional"
+Requires-Dist: diffusers; extra == "optional"
+Requires-Dist: einops==0.3.0; extra == "optional"
+Requires-Dist: imageio==2.9.0; extra == "optional"
+Requires-Dist: imageio-ffmpeg==0.4.2; extra == "optional"
+Requires-Dist: invisible-watermark; extra == "optional"
+Requires-Dist: kornia==0.6; extra == "optional"
+Requires-Dist: latent-diffusion; extra == "optional"
+Requires-Dist: nibabel; extra == "optional"
+Requires-Dist: omegaconf==2.1.1; extra == "optional"
+Requires-Dist: pudb==2019.2; extra == "optional"
+Requires-Dist: pytorch-lightning==1.4.2; extra == "optional"
+Requires-Dist: streamlit>=0.73.1; extra == "optional"
+Requires-Dist: taming-transformers; extra == "optional"
+Requires-Dist: test-tube>=0.7.5; extra == "optional"
+Requires-Dist: timm; extra == "optional"
+Requires-Dist: torch-fidelity==0.3.0; extra == "optional"
+Requires-Dist: torchmetrics==0.6.0; extra == "optional"
+Requires-Dist: transformers==4.19.2; extra == "optional"
+Provides-Extra: mim
+Requires-Dist: mmcv<2.2.0,>=2.0.0rc4; extra == "mim"
+Requires-Dist: mmengine<1.0.0,>=0.5.0; extra == "mim"
+Provides-Extra: multimodal
+Requires-Dist: ftfy; extra == "multimodal"
+Requires-Dist: regex; extra == "multimodal"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+# CCASeg : Decoding Multi-Scale Context with Convolutional Cross-Attention for Semantic Segmentation (WACV 2025)
+#### 📝[Paper](https://openaccess.thecvf.com/content/WACV2025/papers/Yoo_CCASeg_Decoding_Multi-Scale_Context_with_Convolutional_Cross-Attention_for_Semantic_Segmentation_WACV_2025_paper.pdf)
+
+> #### Jiwon Yoo<sup>1</sup>\*, Dami Ko<sup>1</sup>\*, Gyeonghwan Kim<sup>1&dagger;</sup>
+> \* Equal contribution, <sup>&dagger;</sup>Correspondence
+
+> <sup>1</sup> Sogang University
+
+---
+
+This repository contains the official PyTorch implementation of training & evaluation code and the pretrained models for CCASeg.
+
+![CCASeg Architecture](https://github.com/user-attachments/assets/186ae74d-7ab9-4c64-88a1-278bb6fcf1ec)
+![CCA Block](https://github.com/user-attachments/assets/5469e50f-1f44-499a-9bd0-a373056de4c8)
+
+---
+
+## Installation
+For install and data preparation, please refer to the guidelines in [MMSegmentation v1.0.0](https://github.com/open-mmlab/mmsegmentation?tab=readme-ov-file)
+Other requirements: pip install timm==0.9.12
+An example (works for me): CUDA 11.8 and pytorch 2.0.1
+
+```bash
+pip install torchvision==0.16.0
+pip install timm==0.9.12
+pip install mmcv==2.1.0
+pip install opencv-python==4.8.1.78
+cd CCASeg && pip install -e . --user
+```
+
+## Evaluation
+Download [CCASeg weights](https://drive.google.com/drive/folders/1hKgzJ0vhjhPcG5TRG0dkA5YpD8N8qyPp?hl=ko) into the ``/path/to/checkpoint_file``.
+
+``local_configs/`` contains config files. 
+
+Example : Evaluate ``CCASeg-B0`` on ``ADE20K``:
+
+```bash
+# Single-gpu testing
+CUDA_VISIBLE_DEVICES=0 python ./tools/test.py local_configs/ccaseg/B0/ccaseg.b0.512x512.ade.160k.py /path/to/checkpoint_file
+
+# Multi-gpu testing
+CUDA_VISIBLE_DEVICES=0,1 bash ./tools/dist_test.sh local_configs/ccaseg/B0/ccaseg.b0.512x512.ade.160k.py /path/to/checkpoint_file <GPU_NUM>
+```
+## Training
+Download backbone(MiT-B0 & MiT-B1 & MSCAN-T & MSCAN-B) pretrained weights in [here](https://drive.google.com/drive/folders/1Wr4qiaH54IywMEIJ39w-5X3-MKVOxYi1?hl=ko).
+
+Put them in a folder ``ckpt/``.
+
+Example : Train ``CCASeg-B0`` on ``ADE20K``:
+
+```bash
+# Single-gpu training
+CUDA_VISIBLE_DEVICES=0 python ./tools/train.py local_configs/ccaseg/B0/ccaseg.b0.512x512.ade.160k.py 
+
+# Multi-gpu training
+CUDA_VISIBLE_DEVICES=0,1 bash ./tools/dist_train.sh local_configs/ccaseg/B0/ccaseg.b0.512x512.ade.160k.py <GPU_NUM>
+```
+
+## Citation
+```bash
+@InProceedings{Yoo_2025_WACV,
+    author    = {Yoo, Jiwon and Ko, Dami and Kim, Gyeonghwan},
+    title     = {CCASeg: Decoding Multi-Scale Context with Convolutional Cross-Attention for Semantic Segmentation},
+    booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {February},
+    year      = {2025},
+    pages     = {9461-9470}
+}
+```
