@@ -1,15 +1,13 @@
 ```markdown
 # CHLSeg: Cascaded Hierarchical Low-level Detail Recovery for Semantic Segmentation
-
-> **IEEE TCSVT** submission — Official implementation of the CHLSeg decoder
 > (Frequency-Spatial Detail Branch + Multi-scale Convolutional Cross-Attention).
 
 This repository is built on
 [MMSegmentation v1.2.2](https://github.com/open-mmlab/mmsegmentation).
 
-<p align="center">
-  <img src=".github/architecture.png" width="90%" alt="CHLSeg architecture">
-</p>
+<div align="center">
+  <img src="assets/architecture.png" width="90%" alt="CHLSeg architecture">
+</div>
 
 -------------------------------------------------------------------------------
 
