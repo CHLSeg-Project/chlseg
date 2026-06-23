@@ -5,9 +5,7 @@
 This repository is built on
 [MMSegmentation v1.2.2](https://github.com/open-mmlab/mmsegmentation).
 
-<div align="center">
-  <img src="assets/architecture.png" width="90%" alt="CHLSeg architecture">
-</div>
+https://raw.githubusercontent.com/CHLSeg-Project/chlseg/main/assets/architecture.png
 
 -------------------------------------------------------------------------------
 
