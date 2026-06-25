@@ -27,13 +27,23 @@ model = dict(
         pat_temperature=2.0,
         pat_eps=0.1,
         max_refine_scale=0.15,
+        cluster_loss_weight=0.0,  
         loss_decode=dict(
             type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)))
 
 
 param_scheduler = [
     dict(begin=0, by_epoch=False, end=1500, start_factor=1e-06, type='LinearLR'),
-    dict(begin=1500, by_epoch=False, end=160000, eta_min=0.0, power=1.0, type='PolyLR'),
+    dict(begin=1500, by_epoch=False, end=160000, eta_min=1e-6, power=1.0, type='PolyLR'),
 ]
-train_cfg = dict(max_iters=160000, type='IterBasedTrainLoop', val_interval=10000)
-default_hooks = dict(checkpoint=dict(by_epoch=False, interval=16000, type='CheckpointHook'))
+train_cfg = dict(max_iters=160000, type='IterBasedTrainLoop', val_interval=5000)
+default_hooks = dict(
+    checkpoint=dict(
+        by_epoch=False,
+        interval=5000,
+        type='CheckpointHook',
+        save_best='mIoU',      
+        rule='greater',           
+        max_keep_ckpts=5,     
+    )
+)

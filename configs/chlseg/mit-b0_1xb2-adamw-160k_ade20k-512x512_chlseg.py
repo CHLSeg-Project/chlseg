@@ -27,5 +27,6 @@ model = dict(
         pat_temperature=2.0,
         pat_eps=0.1,
         max_refine_scale=0.15,
+        cluster_loss_weight=0.0,  
         loss_decode=dict(
             type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)))

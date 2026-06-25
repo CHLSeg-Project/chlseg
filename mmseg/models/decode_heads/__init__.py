@@ -39,12 +39,9 @@ from .vpd_depth_head import VPDDepthHead
 from .ccaseg_mit import CCASegHead_mit
 from .ccaseg_small import CCASegHead_small
 from .ccaseg_tiny import CCASegHead_tiny
-from .ccaseg_wave_refine_head import CCAWaveRefineHead_small
-from .ccaseg_wave_sos_refine_head import CCAWaveSOSRefineHead_small
 from .chlseg_head import CHLSegHead_tiny
 from .chlseg_head_small import CHLSegHead_small
 from .waveseg_head import WaveSegHead
-from .wavecca_fusion_head import WaveCCAFusionHead
 
 __all__ = [
     'FCNHead', 'PSPHead', 'ASPPHead', 'PSAHead', 'NLHead', 'GCHead', 'CCHead',
@@ -56,8 +53,7 @@ __all__ = [
     'KernelUpdateHead', 'KernelUpdator', 'MaskFormerHead', 'Mask2FormerHead',
     'LightHamHead', 'PIDHead', 'DDRHead', 'VPDDepthHead', 'SideAdapterCLIPHead', 
     'CCASegHead_mit', 'CCASegHead_small', 'CCASegHead_tiny',
-    'CCAWaveRefineHead_small', 'CCAWaveSOSRefineHead_small',
     'CHLSegHead_tiny',
     'CHLSegHead_small',
-    'WaveSegHead', 'WaveCCAFusionHead'
+    'WaveSegHead'
 ]

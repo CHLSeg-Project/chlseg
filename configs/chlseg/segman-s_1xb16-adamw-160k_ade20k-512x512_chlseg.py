@@ -62,28 +62,13 @@ model = dict(
         pat_temperature=2.0,
         pat_eps=0.1,
         max_refine_scale=0.15,
+        cluster_loss_weight=0.0,  
         loss_decode=dict(
             type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)),
     train_cfg=dict(),
     test_cfg=dict(mode='whole'))
 
-# Effective batch size = 8 * 2 = 16, mathematically equivalent to the
-# original batch_size=16 single-step training. Lets us cut per-step memory
-# nearly in half.
-train_dataloader = dict(batch_size=8)
 
-# AMP DISABLED. Earlier attempt used AmpOptimWrapper, and training NaN-ed
-# during warmup around iter 1150-1500: loss_ce and loss_pat went NaN first
-# (PAT's softmax/log path overflows under FP16), then so_aux followed once
-# the encoder weights were corrupted. SegMAN's selective_scan and NATTEN are
-# `@custom_fwd` FP32 internally, but the outer FP16 grads still poisoned the
-# AdamW state with this PyTorch 2.0.0 + lr_mult=10 head config. Going back
-# to FP32 + gradient checkpointing + grad accumulation -- mathematically
-# identical to the original training, just slower and lower-memory.
-#
-# SegMAN paper uses AdamW lr=6e-5 with weight decay 0.01 and a 1500-step
-# warmup; segnext-style paramwise rules (no decay on pos_block/norm, 10x lr
-# for the head) give the head room to adapt to the new backbone.
 optim_wrapper = dict(
     _delete_=True,
     type='OptimWrapper',
@@ -99,7 +84,7 @@ optim_wrapper = dict(
 
 param_scheduler = [
     dict(type='LinearLR', start_factor=1e-6, by_epoch=False, begin=0, end=1500),
-    dict(type='PolyLR', power=1.0, begin=1500, end=160000, eta_min=0.0,
+    dict(type='PolyLR', power=1.0, begin=1500, end=160000, eta_min=1e-6,
          by_epoch=False),
 ]
 
