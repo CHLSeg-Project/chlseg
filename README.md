@@ -1,13 +1,8 @@
 ```markdown
 # CHLSeg: Cascaded Hierarchical Low-level Detail Recovery for Semantic Segmentation
 > (Frequency-Spatial Detail Branch + Multi-scale Convolutional Cross-Attention).
-
 This repository is built on
 [MMSegmentation v1.2.2](https://github.com/open-mmlab/mmsegmentation).
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/CHLSeg-Project/chlseg/main/assets/architecture.png" width="90%" alt="CHLSeg architecture">
-</div>
 
 -------------------------------------------------------------------------------
 
@@ -56,14 +51,22 @@ This repository is built on
 -------------------------------------------------------------------------------
 
 ## Environment Setup
-### 1. Create a conda / venv environment (recommended)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/CHLSeg-Project/chlseg.git
+cd CHLSeg-main
+```
+
+### 2. Create a conda / venv environment (recommended)
 
 ```bash
 conda create -n chlseg python=3.10 -y
 conda activate chlseg
 ```
 
-### 2. Install PyTorch
+### 3. Install PyTorch
 
 Choose the command matching your CUDA version from
 [pytorch.org](https://pytorch.org/get-started/locally/).
@@ -73,7 +76,7 @@ Example (CUDA 12.1):
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
-### 3. Install mmcv + mmengine (OpenMMLab ecosystem)
+### 4. Install mmcv + mmengine (OpenMMLab ecosystem)
 
 ```bash
 pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html
@@ -84,14 +87,14 @@ pip install mmengine
 > version.  See the [mmcv install guide](https://mmcv.readthedocs.io/en/latest/get_started/installation.html)
 > for the full matrix.
 
-### 4. Install MMSegmentation + remaining dependencies
+### 5. Install MMSegmentation + remaining dependencies
 
 ```bash
 pip install -r requirements.txt
 pip install -e .            # install this project as an editable package
 ```
 
-### 5. (Optional) Compile the selective-scan CUDA kernel
+### 6. (Optional) Compile the selective-scan CUDA kernel
 
 Only needed if you plan to run the SegMAN backbone / VSSM ablation experiments:
 
