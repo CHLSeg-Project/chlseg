@@ -56,22 +56,14 @@ This repository is built on
 -------------------------------------------------------------------------------
 
 ## Environment Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/CCASeg-main.git
-cd CCASeg-main
-```
-
-### 2. Create a conda / venv environment (recommended)
+### 1. Create a conda / venv environment (recommended)
 
 ```bash
 conda create -n chlseg python=3.10 -y
 conda activate chlseg
 ```
 
-### 3. Install PyTorch
+### 2. Install PyTorch
 
 Choose the command matching your CUDA version from
 [pytorch.org](https://pytorch.org/get-started/locally/).
@@ -81,7 +73,7 @@ Example (CUDA 12.1):
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
-### 4. Install mmcv + mmengine (OpenMMLab ecosystem)
+### 3. Install mmcv + mmengine (OpenMMLab ecosystem)
 
 ```bash
 pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html
@@ -92,14 +84,14 @@ pip install mmengine
 > version.  See the [mmcv install guide](https://mmcv.readthedocs.io/en/latest/get_started/installation.html)
 > for the full matrix.
 
-### 5. Install MMSegmentation + remaining dependencies
+### 4. Install MMSegmentation + remaining dependencies
 
 ```bash
 pip install -r requirements.txt
 pip install -e .            # install this project as an editable package
 ```
 
-### 6. (Optional) Compile the selective-scan CUDA kernel
+### 5. (Optional) Compile the selective-scan CUDA kernel
 
 Only needed if you plan to run the SegMAN backbone / VSSM ablation experiments:
 
